@@ -3,20 +3,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%	
-	String imgPath = "./boardUpload/";
+	String imgPath = "./boardUpload/";		// 이미지 파일 저장 경로
 	int i=0;
-	int []cate1 = new int[4];//패션
-	int []cate2 = new int[4];//미용
-	int []cate3 = new int[4];//유아동
-	int []cate4 = new int[4];//식품
-	int []cate5 = new int[4];//숙박
-	int []cate6 = new int[4];//맛집
-	int []cate7 = new int[4];//디지털
-	int []cate8 = new int[4];//생활용품
-	int []cate9 = new int[4];//앱리뷰
-	int []cate10 = new int[4];//지역
-	int []cate11 = new int[4];//웹서비스
-	int []cate12 = new int[4];//기타
+	int []cate1 = new int[4];		// 패션
+	int []cate2 = new int[4];		// 미용
+	int []cate3 = new int[4];		// 유아동
+	int []cate4 = new int[4];		// 식품
+	int []cate5 = new int[4];		// 숙박
+	int []cate6 = new int[4];		// 맛집
+	int []cate7 = new int[4];		// 디지털
+	int []cate8 = new int[4];		// 생활용품
+	int []cate9 = new int[4];		// 앱리뷰
+	int []cate10 = new int[4];		// 지역
+	int []cate11 = new int[4];		// 웹서비스
+	int []cate12 = new int[4];		// 기타
 	String id = (String) session.getAttribute("id");
 %>
 <%
@@ -27,7 +27,7 @@
 %> 
 	<jsp:forward page="index.do"></jsp:forward>
 <%	} else {
-		for(int j=0; j<reviews.getCategory().size(); j++) {
+		for(int j=0; j<reviews.getCategory().size(); j++) {		// 전체글 긁어와서 패션인 카테고리만 
 			if(reviews.getCategory().get(j).equals("패션")) {
 				cate1[i] = j;
 				i++;
@@ -311,7 +311,7 @@
 		<h3>최신 리뷰 / <a href = "boardList.do">모든 리뷰 보기</a></h3>
 		<!-- 	<./index.do -->
 		<ul class="nav nav-tabs" id="myTab" role="tablist">
-			<li class="nav-item" role="presentation">
+			<li class="nav-item" role="presentation">		
 				<a id="menu1" class=" nav-link active" data-toggle="tab" href="#con1" role="tab">패션/뷰티</a>
 			</li>
 			<li class="nav-item" role="presentation">
@@ -348,10 +348,12 @@
 				<a id="menu12" class="nav-link" data-toggle="tab" href="#con12" role="tab">기타</a>
 			</li>
 		</ul>
+		
+		<!-- 패션 / 뷰티 -->
 		<div class="container p-0 tab-content mt-1 mt-1" id="myTabContent1">
 			<div class="tab-pane fade show active" id="con1" role="tabpanel">
 				<div class="card-deck">
-				<%for(int z=0; z<4; z++){ %>
+				<%for(int z=0; z<4; z++){ %>		
 				<%if(z > 0 && reviews.getNum().get(cate1[z]) == reviews.getNum().get(cate1[0])){ %>
 				<div class="card">
 					<div class="card-body">
@@ -389,10 +391,12 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- 미용 -->
 		<div class="container p-0 tab-content mt-1" id="myTabContent2">
 			<div class="tab-pane fade show active" id="con2" role="tabpanel">
 				<div class="card-deck">
-				<%for(int z=0; z<4; z++){ %>
+				<%for(int z=0; z<4; z++){ %>	
 				<%if(z > 0 && reviews.getNum().get(cate2[z]) == reviews.getNum().get(cate2[0])){ %>
 				<div class="card">
 					<div class="card-body">
@@ -430,10 +434,12 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- 유아동 -->
 		<div class="container p-0 tab-content mt-1" id="myTabContent3">
 			<div class="tab-pane fade show active" id="con3" role="tabpanel">
 				<div class="card-deck">
-				<%for(int z=0; z<4; z++){ %>
+				<%for(int z=0; z<4; z++){ %>		
 				<%if(z > 0 && reviews.getNum().get(cate3[z]) == reviews.getNum().get(cate3[0])){ %>
 				<div class="card">
 					<div class="card-body">
@@ -471,10 +477,12 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- 식품 / 건강 -->
 		<div class="container p-0 tab-content mt-1" id="myTabContent4">
 			<div class="tab-pane fade show active" id="con4" role="tabpanel">
 				<div class="card-deck">
-				<%for(int z=0; z<4; z++){ %>
+				<%for(int z=0; z<4; z++){ %>		
 				<%if(z > 0 && reviews.getNum().get(cate4[z]) == reviews.getNum().get(cate4[0])){ %>
 				<div class="card">
 					<div class="card-body">
@@ -512,6 +520,8 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- 숙박 -->
 		<div class="container p-0 tab-content mt-1" id="myTabContent5">
 			<div class="tab-pane fade show active" id="con5" role="tabpanel">
 				<div class="card-deck">
@@ -552,6 +562,8 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- 맛집 -->
 		<div class="container p-0 tab-content mt-1" id="myTabContent6">
 			<div class="tab-pane fade show active" id="con6" role="tabpanel">
 				<div class="card-deck">
@@ -592,6 +604,8 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- 디지털 -->
 		<div class="container p-0 tab-content mt-1" id="myTabContent7">
 			<div class="tab-pane fade show active" id="con7" role="tabpanel">
 				<div class="card-deck">
@@ -632,6 +646,8 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- 생활용품 -->
 		<div class="container p-0 tab-content mt-1" id="myTabContent8">
 			<div class="tab-pane fade show active" id="con8" role="tabpanel">
 				<div class="card-deck">
@@ -672,6 +688,8 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- 앱 -->
 		<div class="container p-0 tab-content mt-1" id="myTabContent9">
 			<div class="tab-pane fade show active" id="con9" role="tabpanel">
 				<div class="card-deck">
@@ -712,6 +730,8 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- 지역 / 문화 -->
 		<div class="container p-0 tab-content mt-1" id="myTabContent10">
 			<div class="tab-pane fade show active" id="con10" role="tabpanel">
 				<div class="card-deck">
@@ -752,6 +772,8 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- 웹 서비스 -->
 		<div class="container p-0 tab-content mt-1" id="myTabContent11">
 			<div class="tab-pane fade show active" id="con11" role="tabpanel">
 				<div class="card-deck">
@@ -792,6 +814,8 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- 기타 -->
 		<div class="container p-0 tab-content mt-1" id="myTabContent12">
 			<div class="tab-pane fade show active" id="con12" role="tabpanel">
 				<div class="card-deck">
@@ -833,18 +857,18 @@
 			</div>
 		</div>
 	</section>
+	
 	<footer id="copyright">		
 		copyright &copy; by Review Me All Right Reserves
 		<a id = "git" href = "https://github.com/koobonhui/realPro" target="_blank"><img width="100px" src = "imgs/GitHub.png"  alt = "깃허브"/></a>
 	</footer>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-	<script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 	
+	<!-- 탭 메뉴 -->		
+	<script>	
 	$(function() {
 		$(".tab-content").hide();
 		$("#myTabContent1").show();
@@ -862,17 +886,20 @@
 				$("#searchForm").submit();								
 			}
 		});	
-	});
-	
+	});	
 	</script>
-		<script>
-	cookiedata = document.cookie;   
+	
+	<!-- 팝업 -->
+	<script>
+	cookiedata = document.cookie;  
+	
 	if ( cookiedata.indexOf("maindiv=done") < 0 ){     
 	    document.all['popup'].style.visibility = "visible";
 	    }
 	    else {
 	        document.all['popup'].style.visibility = "hidden";
 	}
+	
 	function setCookie( name, value, expiredays ) {
 	    var todayDate = new Date();
 	        todayDate.setDate( todayDate.getDate() + expiredays );
@@ -885,10 +912,13 @@
 	    }
 	    document.all['popup'].style.visibility = "hidden";
 	}
+	
 	$("#pFoot > button").click(function(){
 		$("#popup").fadeOut();
 	});
 	</script>
+	
+	<!-- 페이지 새로고침 -->
 	<script>	
 		if(self.name != 'reload') {
 			self.name = 'reload';

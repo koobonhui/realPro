@@ -10,11 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 </head>
 <body>
-	<!-- header -->
+
+<!-- header -->
 <div id="header">
     <a href="index.do" title="리뷰미 회원가입 페이지 보기"><img src="imgs/logo3.png" id="logo"></a>
 </div>
-	<!-- wrapper -->
+
+<!-- wrapper -->
 <div id = "wrapper">
 <form action="login.do" method = "POST">
     <!-- content-->
@@ -27,8 +29,8 @@
             <span class = "box int_id">
                 <input type = "text" id = "id" class = "int" maxlength = "20" name = "id" onkeypress="caps_lock(event)">
             </span>
-            <span class = "error_next_box">Caps Lock이 켜져있습니다.</span>
         </div>
+        
         <!-- PW -->
         <div>
             <h3 class = "join_title"><label for = "pswd1">비밀번호</label></h3>
@@ -39,7 +41,7 @@
         
         <!-- Login BTN-->
         <div class = "btn_area">
-            <button type = "submit" id="btnJoin" onclick="return check_login();">
+            <button type = "submit" id="btnJoin">
                 <span>로그인</span>
             </button>            
         </div>
@@ -55,6 +57,8 @@
 </div> 
 </body>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
+	
+	<!-- 중복 로그인 방지 -->
 	<script>
 		$(function(){
 			<%if(session.getAttribute("id") != null){ %>

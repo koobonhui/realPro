@@ -53,8 +53,9 @@ public class MemberDAO {
 		return loginId;
 	}
 	
-	public int insertMember(Member member){
+	public int insertMember(Member member){		// 회원가입
 		String sql="INSERT INTO users VALUES (?,?,HEX(AES_ENCRYPT(?,'egg')),HEX(AES_ENCRYPT(?,'egg')),?,?,?,?,?,?,0)";
+													// 비밀번호 암호화, 복호화
 		int insertCount=0;
 		
 		try{
@@ -79,7 +80,7 @@ public class MemberDAO {
 		return insertCount;
 	}
 	
-	public int loginResult(String id, String pass) {
+	public int loginResult(String id, String pass) {		// 로그인
 		String pass_sql="";
 		String sql = "SELECT id,CAST(AES_DECRYPT(UNHEX(pass),'egg') AS CHAR(10000)) pass,ban FROM users WHERE id=?";
 		boolean ban = false;
@@ -95,7 +96,7 @@ public class MemberDAO {
 					ban =  rs.getBoolean("ban");
 				} while(rs.next());
 			} else {
-				return 0; //없는 계정
+				return 0; // 없는 계정
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -106,11 +107,11 @@ public class MemberDAO {
 		}
 		if(pass_sql.equals(pass)) {
 			if(ban == true) {
-				return 3; //밴 상태
+				return 3; // 밴 상태
 			}
-			return 1; //성공
+			return 1; // 성공
 		} else
-			return 2; //비번 틀림
+			return 2; // 비번 틀림
 	}
 	
 	public Member selectMember(String id) {
@@ -167,7 +168,7 @@ public class MemberDAO {
 		
 		return result;
 	}
-	public int idCheck(String id) {		
+	public int idCheck(String id) {		// 아이디 중복 체크
 		String sql = "select count(id) idcnt from users where id = '" + id + "'";
 		try {
 			pstmt = con.prepareStatement(sql);

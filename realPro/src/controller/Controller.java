@@ -51,10 +51,10 @@ public class Controller extends javax.servlet.http.HttpServlet
 		Action action=null;
 		Action action1 = null;
 
-		if(command.equals("/loginForm.do")){
+		if(command.equals("/loginForm.do")){		// 로그인 폼
 			forward=new ActionForward();
 			forward.setPath("/loginForm.jsp");
-		} else if(command.equals("/login.do")) {
+		} else if(command.equals("/login.do")) {	// 로그인 액션
 			action = new LoginAction();
 			try {
 				forward = action.execute(request, response);
@@ -62,32 +62,32 @@ public class Controller extends javax.servlet.http.HttpServlet
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else if(command.equals("/logout.do")) {
+		} else if(command.equals("/logout.do")) {		// 로그아웃
 			HttpSession session = request.getSession();
 			session.invalidate();
 			response.sendRedirect("./index.do");
-		} else if(command.equals("/joinForm.do")) {
+		} else if(command.equals("/joinForm.do")) {		// 회원가입 폼
 			forward=new ActionForward();
 			forward.setPath("/joinForm.jsp");
-		} else if(command.equals("/joinAction.do")) {
+		} else if(command.equals("/joinAction.do")) {		// 회원가입 액션
 			action = new JoinAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if(command.equals("/index.do")) {
+		} else if(command.equals("/index.do")) {	// 메인화면으로 (게시글 넘겨주면서)
 			action = new ReviewsAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if(command.equals("/reviewWriteForm.do")) {
+		} else if(command.equals("/reviewWriteForm.do")) {		// 게시글 쓰기 폼
 			forward=new ActionForward();
 			forward.setPath("/reviewWriteForm.jsp");
 			forward.setRedirect(false);
-		} else if(command.equals("/reviewReadForm.do")) {
+		} else if(command.equals("/reviewReadForm.do")) {		// 선택한 게시글 읽기
 			action = new ReviewReadAction();
 			action1 = new ReplyAction();
 			try {
@@ -97,7 +97,7 @@ public class Controller extends javax.servlet.http.HttpServlet
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else if(command.equals("/replyWrite.do")) {
+		} else if(command.equals("/replyWrite.do")) {		// 게시글 댓글 쓰기
 			action = new ReplyWriteAction();
 			try {
 				forward = action.execute(request, response);
@@ -170,7 +170,7 @@ public class Controller extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 			
-		} else if(command.equals("/idCheck.do")) {
+		} else if(command.equals("/idCheck.do")) {		// 아이디 중복 체크
 			action = new IdCheckAction();
 			try {
 				forward = action.execute(request, response);

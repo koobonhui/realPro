@@ -27,7 +27,7 @@ public class ReplyWriteAction implements Action{
 	   		content.add((String)request.getParameter("reply_content"));
 	   		board_num.add(Integer.parseInt(request.getParameter("board_num")));
 	   		
-	   		Date cal = Calendar.getInstance().getTime();
+	   		Date cal = Calendar.getInstance().getTime();	// 댓글 쓴 시간 가져오기
 	   		SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd / HH:mm:ss");
 	   		String datestr = sdf.format(cal.getTime());
 	   		date.add(datestr);

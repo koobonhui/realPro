@@ -31,7 +31,7 @@ public class ReviewsDAO {
 		this.con = con;
 	}
 	
-	public Reviews selectReviews(){
+	public Reviews selectReviews(){		// 리뷰 게시글 가져오기
 		String sql="SELECT * FROM reviews order by num desc;";
 		Reviews reviews = new Reviews();
 		ArrayList<String> num = new ArrayList<String>();
@@ -71,7 +71,7 @@ public class ReviewsDAO {
 		return reviews;
 	}
 	
-	public Reviews selectReview(int board_num) {
+	public Reviews selectReview(int board_num) {		// 선택한 리뷰 가져오기
 		String sql_increaseViews = "UPDATE reviews SET views=views+1 WHERE num = ?";
 		String sql = "SELECT * FROM reviews WHERE num = ?";
 		try {
@@ -131,7 +131,7 @@ public class ReviewsDAO {
 		return reviews;
 	}
 	
-	public int insertArticle(Reviews reviews) {
+	public int insertArticle(Reviews reviews) {		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		int num =0;

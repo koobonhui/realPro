@@ -34,7 +34,7 @@ public class ReplyDAO {
 		this.con = con;
 	}
 
-	public Reply selectReply(int board_num) {
+	public Reply selectReply(int board_num) {		// 댓글 가져오기
 		System.out.println("리플라이 dao 진입");
 		String sql = "SELECT * FROM reply WHERE ref_num=?";
 		Reply reply = new Reply();
@@ -72,7 +72,7 @@ public class ReplyDAO {
 		return reply;
 	}
 
-	public boolean writeReply(Reply reply) {
+	public boolean writeReply(Reply reply) {	// 댓글 쓰기
 		System.out.println("댓글쓰기DAO");
 		String sql = "INSERT INTO reply VALUES(?,?,?,?,?)";
 		try {

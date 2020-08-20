@@ -29,6 +29,8 @@
 	</header>
 	<div class="clearfix"></div>
 	<hr/>
+	
+  <!-- 회원가입 폼 -->
   <section>
   	<form name = "joinForm" action = "joinAction.do" method = "post">
     <div class = "container">
@@ -160,6 +162,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" ></script>
+    
+    <!-- 아이디 중복 체크 -->
 	<script>
 		var btnIdCheck = document.getElementById("idCheck");
 		btnIdCheck.onclick = function(){			
@@ -196,6 +200,8 @@
 			location.href="unimplemented.jsp";
 		});
 	</script>
+	
+	<!-- 비밀번호 확인 체크 -->
 	<script>
 		$(function() {
 			$("#passSuccess").hide();
@@ -218,6 +224,8 @@
 			});
 		
 		});
+		
+		<!-- 이메일 형식 체크 -->
 		function chkEmail(str) {
 		    var regExp = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
 
