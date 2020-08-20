@@ -30,7 +30,7 @@ public class MemberDAO {
 		this.con = con;
 	}
 	
-	public String selectLoginId(Member member){
+	public String selectLoginId(Member member){		// 로그인
 		String loginId = null;
 		String sql="SELECT id FROM users WHERE id=? AND pass=HEX(AES_ENCRYPT(?,'egg'))";
 		
@@ -80,7 +80,7 @@ public class MemberDAO {
 		return insertCount;
 	}
 	
-	public int loginResult(String id, String pass) {		// 로그인
+	public int loginResult(String id, String pass) {		// 로그인 결과
 		String pass_sql="";
 		String sql = "SELECT id,CAST(AES_DECRYPT(UNHEX(pass),'egg') AS CHAR(10000)) pass,ban FROM users WHERE id=?";
 		boolean ban = false;
@@ -114,7 +114,7 @@ public class MemberDAO {
 			return 2; // 비번 틀림
 	}
 	
-	public Member selectMember(String id) {
+	public Member selectMember(String id) {		// 유저정보 불러오기
 		String sql="SELECT * FROM users WHERE id=?";
 		Member selectMember = new Member();
 		

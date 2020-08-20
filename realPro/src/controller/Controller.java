@@ -105,7 +105,7 @@ public class Controller extends javax.servlet.http.HttpServlet
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else if(command.equals("/boardWritePro.do")) {
+		} else if(command.equals("/boardWritePro.do")) {	// 게시글 쓰기
 			action = new BoardWriteProAction();
 			try {
 				forward = action.execute(request, response);
@@ -113,7 +113,7 @@ public class Controller extends javax.servlet.http.HttpServlet
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else if(command.equals("/boardList.do")) {
+		} else if(command.equals("/boardList.do")) {		// 게시글 전체 보기
 			action = new BoardListAction();
 			try {
 				forward = action.execute(request, response);
@@ -121,7 +121,7 @@ public class Controller extends javax.servlet.http.HttpServlet
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else if(command.equals("/deleteReview.do")) {
+		} else if(command.equals("/deleteReview.do")) {		// 게시글 삭제
 			action = new DeleteReviewAction();
 			try {
 				forward = action.execute(request, response);
@@ -129,7 +129,7 @@ public class Controller extends javax.servlet.http.HttpServlet
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else if(command.equals("/updateReview.do")) {
+		} else if(command.equals("/updateReview.do")) {		// 게시글 수정
 			action = new UpdateReviewAction();
 			try {
 				forward = action.execute(request, response);
@@ -137,7 +137,7 @@ public class Controller extends javax.servlet.http.HttpServlet
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else if(command.equals("/replyDelete.do")) {
+		} else if(command.equals("/replyDelete.do")) {		// 게시글 댓글 수정
 			action = new ReplyDeleteAction();
 			try {
 				forward = action.execute(request, response);
@@ -145,7 +145,7 @@ public class Controller extends javax.servlet.http.HttpServlet
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else if(command.equals("/selectMember.do")) {
+		} else if(command.equals("/selectMember.do")) {		// 자기 회원정보 보기
 			action = new SelectMemberAction();
 			try {
 				forward = action.execute(request, response);
@@ -153,7 +153,7 @@ public class Controller extends javax.servlet.http.HttpServlet
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else if(command.equals("/userUpdate.do")) {
+		} else if(command.equals("/userUpdate.do")) {		// 회원정보 수정(필요없는거 같은데 무섭다)
 			action = new UpdateUserAction();
 			try {
 				forward = action.execute(request, response);
@@ -161,7 +161,7 @@ public class Controller extends javax.servlet.http.HttpServlet
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else if(command.equals("/totalSearch.do")) {
+		} else if(command.equals("/totalSearch.do")) {		//	전체리뷰
 			action = new TotalSearchAction();
 			try {
 				forward = action.execute(request, response);
@@ -178,7 +178,7 @@ public class Controller extends javax.servlet.http.HttpServlet
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else if(command.equals("/cateList.do")) {
+		} else if(command.equals("/cateList.do")) {		// 카테고리 게시글 검색
 			action = new CateListAction();
 			try {
 				forward = action.execute(request, response);
@@ -186,7 +186,7 @@ public class Controller extends javax.servlet.http.HttpServlet
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else if(command.equals("/recommendReview.do")) {
+		} else if(command.equals("/recommendReview.do")) {		// 좋아요 누르기
 			action = new ReviewRecommendAction();
 			try {
 				forward = action.execute(request, response);
@@ -194,7 +194,7 @@ public class Controller extends javax.servlet.http.HttpServlet
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else if(command.equals("/recCount.do")) {
+		} else if(command.equals("/recCount.do")) {		// 좋아요 카운트
 			action = new RecCountAction();
 			try {
 				forward = action.execute(request, response);
@@ -202,10 +202,10 @@ public class Controller extends javax.servlet.http.HttpServlet
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else if(command.equals("/memberSearchForm.do")) {
+		} else if(command.equals("/memberSearchForm.do")) {		// 회원찾기 폼
 			forward=new ActionForward();
 			forward.setPath("/memberSearchForm.jsp");
-		} else if(command.equals("/memberSearch.do")) {
+		} else if(command.equals("/memberSearch.do")) {		// 회원찾기(아이디 입력)
 			action = new MemberSearchAction();
 			try {
 				forward = action.execute(request, response);
@@ -213,7 +213,7 @@ public class Controller extends javax.servlet.http.HttpServlet
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else if(command.equals("/updateMember.do")) {
+		} else if(command.equals("/updateMember.do")) {		// 회원 정보 수정
 			action = new UpdateMemberAction();
 			try {
 				forward = action.execute(request, response);
@@ -221,7 +221,7 @@ public class Controller extends javax.servlet.http.HttpServlet
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else if(command.equals("/deleteMember.do")) {
+		} else if(command.equals("/deleteMember.do")) {		// 회원 탈퇴
 			System.out.println("삭제 컨트롤");
 			action = new DeleteMemberAction();
 			try {
@@ -230,7 +230,7 @@ public class Controller extends javax.servlet.http.HttpServlet
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else if(command.equals("/memberBan.do")) {
+		} else if(command.equals("/memberBan.do")) {		// 회원 Ban
 			action = new MemberBanAction();
 			try {
 				forward = action.execute(request, response);
@@ -238,7 +238,7 @@ public class Controller extends javax.servlet.http.HttpServlet
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else if(command.equals("/memberPermit.do")) {
+		} else if(command.equals("/memberPermit.do")) {		// Ban 풀어주기
 			action = new MemberPermitAction();
 			try {
 				forward = action.execute(request, response);

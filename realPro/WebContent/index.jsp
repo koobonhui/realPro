@@ -20,7 +20,7 @@
 	String id = (String) session.getAttribute("id");
 %>
 <%
-	Reviews reviews = (Reviews) request.getAttribute("reviews");
+	Reviews reviews = (Reviews)request.getAttribute("reviews");
 %>
 <%
 	if (reviews == null) {
