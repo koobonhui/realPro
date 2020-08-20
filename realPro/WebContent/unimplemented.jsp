@@ -35,10 +35,6 @@
  			 </div>
 		</div>
 	</section>
-	<footer id="copyright">		
-		copyright &copy; by Review Me All Right Reserves
-		<a id = "git" href = "https://github.com/koobonhui/realPro" target="_blank"><img width="100px" src = "imgs/GitHub.png"  alt = "깃허브"/></a>
-	</footer>
 </body>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" ></script>
