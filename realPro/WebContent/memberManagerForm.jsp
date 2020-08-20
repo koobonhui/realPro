@@ -14,7 +14,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Review Me : 회원정보</title>
 </head>
 <body>
 <%if(request.getAttribute("member") != null){ %>

@@ -10,11 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
     <link rel = "stylesheet" href = "css/main.css">
-    <title>회원 가입 페이지</title>
+    <title>Review Me : 회원가입</title>
   </head>
   <body>
 	<header class="container mt-5">
-		<div class="col-2" id="logo" onclick="location.href='index.do'" style="cursor: pointer;"><img src="imgs/logo.PNG" alt="Logo"/></div>
+		<div class="col-2" id="logo" onclick="location.href='index.do'" style="cursor: pointer;"><img src="imgs/logo3.png" alt="Logo"/></div>
 		<div class="col-2 ml-5" id = "board"><button onclick="location.href='boardList.do'">전체 리뷰</button></div>
 		<form id="searchForm" method="post" action="totalSearch.do">
 			<input name="keyword" id="search" class="col-5" type="text"
@@ -32,7 +32,7 @@
   <section>
   	<form name = "joinForm" action = "joinAction.do" method = "post">
     <div class = "container">
-		<h2 class = "text-center mt-5">회원 가입 페이지</h2>
+		<h2 class = "text-center mt-5">Review Me : 회원가입</h2>
 		<div>
 			<table class="table table-bordered">
 				<tbody>

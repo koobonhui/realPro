@@ -7,7 +7,7 @@ String id = (String)session.getAttribute("id");
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Review Me : 회원검색</title>
 <style>
 	#loginFormArea{
 		margin : auto;

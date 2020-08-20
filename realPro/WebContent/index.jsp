@@ -156,7 +156,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Review Me</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/main.css">
 </head>
@@ -182,7 +182,7 @@
 		</div>
 	</div>
 	<header class="container mt-5">
-		<div class="col-2" id="logo" onclick="location.href='index.do'" style="cursor: pointer;"><img src="imgs/logo.PNG" alt="Logo"/></div>
+		<div class="col-2" id="logo" onclick="location.href='index.do'" style="cursor: pointer;"><img src="imgs/logo3.png" alt="Logo"/></div>
 		<div class="col-2 ml-5" id="board"><button onclick="location.href='boardList.do'">전체 리뷰</button></div>
 		<form id="searchForm" method="post" action="totalSearch.do">
 			<input name="keyword" id="search" class="col-5" type="text"
@@ -834,7 +834,8 @@
 		</div>
 	</section>
 	<footer id="copyright">		
-		copyright &copy; by Egg All Right Reserves
+		copyright &copy; by Review Me All Right Reserves
+		<a id = "git" href = "https://github.com/koobonhui/realPro" target="_blank"><img width="100px" src = "imgs/GitHub.png"  alt = "깃허브"/></a>
 	</footer>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

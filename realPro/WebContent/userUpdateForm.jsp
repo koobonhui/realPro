@@ -21,11 +21,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <link rel = "stylesheet" href = "css/main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-    <title>회원 정보 수정 페이지</title>
+    <title>Review Me : 회원정보 수정</title>
   </head>
   <body>
   <header class="container mt-5">
-		<div class="col-2" id="logo" onclick="location.href='index.do'" style="cursor: pointer;"><img src="imgs/logo.PNG" alt="Logo"/></div>
+		<div class="col-2" id="logo" onclick="location.href='index.do'" style="cursor: pointer;"><img src="imgs/logo3.png" alt="Logo"/></div>
 		<div class="col-2 ml-5" id="board"><button onclick="location.href='boardList.do'">전체 리뷰</button></div>
 		<form id="searchForm" method="post" action="totalSearch.do">
 			<input name="keyword" id="search" class="col-5" type="text"
@@ -165,9 +165,6 @@
 	</form>
   </section>
   <div class="clearfix"></div>
-  <footer class="mt-5" id="copyright">		
-		copyright &copy; by Egg All Right Reserves
-  </footer>
   </body>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>

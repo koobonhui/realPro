@@ -24,11 +24,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="css/main.css">
-	<title>Title</title>
+	<title>Review Me : 전체리뷰</title>
 </head>
 <body>
 	<header class="container mt-5">
-		<div class="col-2" id="logo" onclick="location.href='index.do'" style="cursor: pointer;"><img src="imgs/logo.PNG" alt="Logo"/></div>
+		<div class="col-2" id="logo" onclick="location.href='index.do'" style="cursor: pointer;"><img src="imgs/logo3.png" alt="Logo"/></div>
 		<div class="col-2 ml-5" id="board"><button onclick="location.href='boardList.do'">전체 리뷰</button></div>
 		<form id="searchForm" method="post" action="totalSearch.do">
 			<input name="keyword" id="search" class="col-5" type="text"
@@ -117,9 +117,6 @@
 		<a href="totalSearch.do?page=<%=nowPage+1 %>&&keyword=<%=keyword%>">[다음]</a>
 		<%} %>
 	</section>
-	<footer class="mt-5" id="copyright">		
-		copyright &copy; by Designart All Right Reserves
-	</footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" ></script>

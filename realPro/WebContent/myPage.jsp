@@ -25,7 +25,7 @@
   </head>
   <body>
   <header class="container mt-5">
-		<div class="col-2" id="logo" onclick="location.href='index.do'" style="cursor: pointer;"><img src="imgs/logo.PNG" alt="Logo"/></div>
+		<div class="col-2" id="logo" onclick="location.href='index.do'" style="cursor: pointer;"><img src="imgs/logo3.png" alt="Logo"/></div>
 		<div class="col-2 ml-5" id = "board"><button onclick="location.href='boardList.do'">전체 리뷰</button></div>
 		<form id="searchForm" method="post" action="totalSearch.do">
 			<input name="keyword" id="search" class="col-5" type="text"

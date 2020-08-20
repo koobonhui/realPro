@@ -167,7 +167,7 @@ public class MemberDAO {
 		
 		return result;
 	}
-	public int idCheck(String id) {
+	public int idCheck(String id) {		
 		String sql = "select count(id) idcnt from users where id = '" + id + "'";
 		try {
 			pstmt = con.prepareStatement(sql);
@@ -185,7 +185,7 @@ public class MemberDAO {
 		}
 		return -1;
 	}
-	public Member memberSearch(String id) {
+	public Member memberSearch(String id) {		// 유저 검색
 		// TODO Auto-generated method stub
 		Member member = new Member();
 		String sql = "SELECT name,id,gender,birth,ban FROM users WHERE id = '" + id + "'";
@@ -207,7 +207,7 @@ public class MemberDAO {
 		}
 		return member;
 	}
-	public boolean deleteMember(String id) {
+	public boolean deleteMember(String id) {	//	유저 삭제
 		System.out.println("삭제 컨트롤" + id);
 		boolean result = false;
 		int cnt = 0;
@@ -225,7 +225,7 @@ public class MemberDAO {
 		return result;
 	}
 	
-	public boolean memberBan(String id) {
+	public boolean memberBan(String id) {	// 유저 벤 시키기
 		String sql = "UPDATE users SET ban=1 WHERE id=?";
 		try {
 			pstmt=con.prepareStatement(sql);
@@ -244,7 +244,7 @@ public class MemberDAO {
 		return false;
 	}
 	
-	public boolean memberPermit(String id) {
+	public boolean memberPermit(String id) {	// 유저 벤 풀어주기
 		String sql = "UPDATE users SET ban=0 WHERE id=?";
 		try {
 			pstmt=con.prepareStatement(sql);

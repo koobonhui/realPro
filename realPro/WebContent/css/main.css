@@ -7,7 +7,10 @@
 #logo {
 	float: left;
 }
-
+#logo > img {
+	width: 208px;
+	height: 110px;
+}
 #board {
 	width: 120px;
 	float: left;

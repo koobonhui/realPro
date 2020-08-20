@@ -5,14 +5,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인 페이지</title>
+<title>Review Me : 로그인</title>
     <link rel = "stylesheet" href = "css/login.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 </head>
 <body>
 	<!-- header -->
 <div id="header">
-    <a href="memberMain.do" title="보러올래 회원가입 페이지 보기"><img src="imgs/Sublogo.png" id="logo"></a>
+    <a href="index.do" title="리뷰미 회원가입 페이지 보기"><img src="imgs/logo3.png" id="logo"></a>
 </div>
 	<!-- wrapper -->
 <div id = "wrapper">

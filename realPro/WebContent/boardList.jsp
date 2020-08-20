@@ -20,11 +20,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="css/main.css">
-	<title>테스트 페이지</title>
+	<title>Review Me : 게시판</title>
 </head>
 <body>
 	<header class="container mt-5">
-		<div class="col-2" id="logo" onclick="location.href='index.do'" style="cursor: pointer;"><img src="imgs/logo.PNG" alt="Logo"/></div>
+		<div class="col-2" id="logo" onclick="location.href='index.do'" style="cursor: pointer;"><img src="imgs/logo3.png" alt="Logo"/></div>
 		<div class="col-2 ml-5" id="board"><button onclick="location.href='reviewWriteForm.do'">리뷰 작성</button></div>
 		<form id="searchForm" method="post" action="totalSearch.do">
 			<input name="keyword" id="search" class="col-5" type="text"
@@ -89,31 +89,26 @@
 			%>
 		</div>
 	</section>
-	<section class = "container" id="pageList">
-		<%if(nowPage<=1){ %>
-		[이전]&nbsp;
-		<%}else{ %>
-		<a href="boardList.do?page=<%=nowPage-1 %>">[이전]</a>&nbsp;
-		<%} %>
-
-		<%for(int a=startPage;a<=endPage;a++){
-				if(a==nowPage){%>
-		[<%=a %>]
-		<%}else{ %>
-		<a href="boardList.do?page=<%=a %>">[<%=a %>]
-		</a>&nbsp;
-		<%} %>
-		<%} %>
-
-		<%if(nowPage>=maxPage){ %>
-		[다음]
-		<%}else{ %>
-		<a href="boardList.do?page=<%=nowPage+1 %>">[다음]</a>
-		<%} %>
-	</section>
-	<footer class="mt-5" id="copyright">		
-		copyright &copy; by Designart All Right Reserves
-	</footer>
+	<div class = "container mt-3">
+		<ul class="pagination justify-content-center">
+	   		<!-- 탭 안되게 할려면 -1 -->
+    		<li class="page-item <%=nowPage == 1 ? "disabled" : ""%>">
+       			<a <%=nowPage == 1 ? "tabindex='-1'" : ""%> class="page-link" href="boardList.do?page=<%=nowPage - 1%>">&lt;</a>
+   			</li>
+   			<%
+   				for(int i = startPage; i <= endPage; i++) {
+   			%>
+	    	<li class="page-item <%=nowPage == i ? "active" : ""%>">
+	    		<a class="page-link" href="boardList.do?page=<%=i%>"><%=i%></a>
+	    	</li>
+	    	<%
+   				}
+	    	%>
+	    	<li class="page-item <%=maxPage == nowPage ? "disabled" : ""%>">
+        		<a <%=maxPage == nowPage ? "tabindex='-1'" : ""%> class="page-link" href="boardList.do?page=<%=nowPage + 1%>">&gt;</a>
+	    	</li>	
+	 	</ul>
+	</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" ></script>
