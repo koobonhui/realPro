@@ -117,11 +117,7 @@
 		<%}else{ %>
 		<a href="cateList.do?page=<%=nowPage+1 %>&&category=<%=category%>">[다음]</a>
 		<%} %>
-	</section>
-	<footer class="mt-5" id="copyright">		
-		copyright &copy; by Designart All Right Reserves
-	</footer>
-	
+	</section>	
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" ></script>
