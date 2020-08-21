@@ -89,6 +89,7 @@
 			%>
 		</div>
 	</section>
+	
 	<div class = "container mt-3">
 		<ul class="pagination justify-content-center">
 	   		<!-- 탭 안되게 할려면 -1 -->

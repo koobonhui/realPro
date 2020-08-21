@@ -1,15 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
-	<Resource 
-	name="jdbc/embed1_come"
-	auth="Container"
-	type="javax.sql.DataSource"
-	username="emb1come"
-	password="emb1come"
-	driverClassName="com.mysql.cj.jdbc.Driver"
-	factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
-	url="jdbc:mysql://118.131.179.138:3306/embed1_come?useUnicode=true&amp;characterEncoding=UTF8&amp;serverTimezone=Asia/Seoul"
-	maxActive="500"
-	maxIdle="100"
-	/>
+<!-- 	<Resource  -->
+<!-- 	name="jdbc/embed1_come" -->
+<!-- 	auth="Container" -->
+<!-- 	type="javax.sql.DataSource" -->
+<!-- 	username="emb1come" -->
+<!-- 	password="emb1come" -->
+<!-- 	driverClassName="com.mysql.cj.jdbc.Driver" -->
+<!-- 	factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" -->
+<!-- 	url="jdbc:mysql://118.131.179.138:3306/embed1_come?useUnicode=true&amp;characterEncoding=UTF8&amp;serverTimezone=Asia/Seoul" -->
+<!-- 	maxActive="500" -->
+<!-- 	maxIdle="100" -->
+<!-- 	/> -->
+
+<!-- 개인컴에서 url -->
+<Resource
+	name = "jdbc/bonhui91" 
+	auth = "Container" 
+	type ="javax.sql.DataSource"
+	username = "bonhui91" 
+	password="gjdlwo12!" 
+	driverClassName = "org.mariadb.jdbc.Driver"
+	factory = "org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
+	url = "jdbc:mariadb://bonhui91.cafe24.com/bonhui91"
+	maxActive = "500" maxIdle = "100" />
+
+<!-- <Resource  -->
+<!-- 	name = "jdbc/bonhui91"  -->
+<!-- 	auth = "Container"  -->
+<!-- 	type ="javax.sql.DataSource" -->
+<!-- 	username = "bonhui91"  -->
+<!-- 	password="gjdlwo12!"  -->
+<!-- 	driverClassName = "org.mariadb.jdbc.Driver" -->
+<!-- 	factory = "org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" -->
+<!-- 	url = "jdbc:mariadb://localhost:3306/bonhui91" -->
+<!-- 	maxActive = "500" maxIdle = "100" /> -->
 </Context>

@@ -170,9 +170,8 @@
 			타인의 권리를 침해하거나,<br/> 허위사실 유포, <br/>지나친 비난은 법적인 조치가<br/> 이루어질 수 있습니다.<br/>
 			<br/>회원가입이 귀찮으시면<br/>
 			아래의 계정을 사용하시면 됩니다.<br/><br/>
-			관리자 계정(ID/PASS)<br/>&lt; admin / gjdlwo12 &gt;<br/>
-			일반 계정(ID/PASS)<br/>&lt; person@person.com / person &gt;<br/>
-			일반 계정2(ID/PASS)<br/>&lt; person2@person2.com / person2 &gt;
+			관리자 계정(ID/PASS)<br/>&lt; admin / 1 &gt;<br/>
+			일반 계정(ID/PASS)<br/>&lt; person@person.com / person &gt;
 		</div>
 		<div id = "pFoot">
 			<form name = "closePopup">
@@ -183,9 +182,9 @@
 	</div>
 	<header class="container mt-5">
 		<div class="col-2" id="logo" onclick="location.href='index.do'" style="cursor: pointer;"><img src="imgs/logo3.png" alt="Logo"/></div>
-		<div class="col-2 ml-5" id="board"><button onclick="location.href='boardList.do'">전체 리뷰</button></div>
+<!-- 		<div class="col-2 ml-5" id="board"><button onclick="location.href='boardList.do'">전체 리뷰</button></div> -->
 		<form id="searchForm" method="post" action="totalSearch.do">
-			<input name="keyword" id="search" class="col-5" type="text"
+			<input style= "margin-left: 15%;"name="keyword" id="search" class="col-5" type="text"
 				placeholder="제품명 혹은 모델번호로 검색하세요." required />
 		</form>
 		<% if(id == null){ %>
@@ -197,7 +196,7 @@
 			<div class="col-2" id="login">
 				<h6> <a href="selectMember.do?id=<%=id %>"><%=id%></a>님 환영합니다.</h6>
 				<b><a href="logout.do"> 로그아웃</a></b>
-			<%if(id.equals("admin")) { %><b><a style="float:right;" href="./memberSearchForm.do" onclick="window.open(this.href, '_blank', 'width=500px,height=300px,toolbars=no,scrollbars=no'); return false;">멤버 관리</a></b><%} %>
+			<%if(id.equals("admin")) { %><b><a style="float:right;" href="memberlist.do">멤버 관리</a></b><%} %>
 			</div>
 		<% } %>
 	</header>
@@ -230,7 +229,7 @@
 	</section>
 
 	<nav class="container mt-5">
-		<h3>전체 카테고리</h3>
+		<h3>전체 카테고리 <!--/ <a href = "memberlist.do">유저보기</a>--></h3>
 		<div class="card-group" id = "totalCate">
 			<div class="card" onclick = "location.href = 'cateList.do?category='+'패션'">
 				<img src="imgs/fashion_on.svg" class="card-img-top" alt="...">

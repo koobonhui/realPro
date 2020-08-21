@@ -1,6 +1,5 @@
 package action;
 
-import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,16 +13,17 @@ public class MemberPermitAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
-		PrintWriter out = response.getWriter();
 		String id = request.getParameter("id");
 		MemberPermitService mbs = new MemberPermitService();
 		boolean result = mbs.memberPermit(id);
+		ActionForward forward = new ActionForward();
 		if(result == true) {
-			out.println("1");
+			forward.setPath("memberlist.do");
 		} else {
-			out.println("0");
+			forward.setPath("memberlist.do");
+
 		}
-		return null;
+   		return forward;
 	}
 
 }

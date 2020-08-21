@@ -15,7 +15,7 @@ public class JdbcUtil {
 		try {
 			Context initCtx = new InitialContext();
 			Context envCtx = (Context)initCtx.lookup("java:comp/env");
-			DataSource ds = (DataSource)envCtx.lookup("jdbc/embed1_come");
+			DataSource ds = (DataSource)envCtx.lookup("jdbc/bonhui91");
 			con = ds.getConnection();
 			con.setAutoCommit(false);
 			System.out.println("connect succes");

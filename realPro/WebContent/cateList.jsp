@@ -96,28 +96,26 @@
 			%>
 		</div>
 	</section>
-	<section class = "container" id="pageList">
-		<%if(nowPage<=1){ %>
-		[이전]&nbsp;
-		<%}else{ %>
-		<a href="cateList.do?page=<%=nowPage-1 %>&&category=<%=category%>">[이전]</a>&nbsp;
-		<%} %>
-
-		<%for(int a=startPage;a<=endPage;a++){
-				if(a==nowPage){%>
-		[<%=a %>]
-		<%}else{ %>
-		<a href="cateList.do?page=<%=a %>&&category=<%=category%>">[<%=a %>]
-		</a>&nbsp;
-		<%} %>
-		<%} %>
-
-		<%if(nowPage>=maxPage){ %>
-		[다음]
-		<%}else{ %>
-		<a href="cateList.do?page=<%=nowPage+1 %>&&category=<%=category%>">[다음]</a>
-		<%} %>
-	</section>	
+	<div class = "container mt-3">
+		<ul class="pagination justify-content-center">
+	   		<!-- 탭 안되게 할려면 -1 -->
+    		<li class="page-item <%=nowPage == 1 ? "disabled" : ""%>">
+       			<a <%=nowPage == 1 ? "tabindex='-1'" : ""%> class="page-link" href="cateList.do?page=<%=nowPage-1 %>&&category=<%=category%>">&lt;</a>
+   			</li>
+   			<%
+   				for(int i = startPage; i <= endPage; i++) {
+   			%>
+	    	<li class="page-item <%=nowPage == i ? "active" : ""%>">
+	    		<a class="page-link" href="cateList.do?page=<%=i %>&&category=<%=category%>"><%=i%></a>
+	    	</li>
+	    	<%
+   				}
+	    	%>
+	    	<li class="page-item <%=maxPage == nowPage ? "disabled" : ""%>">
+        		<a <%=maxPage == nowPage ? "tabindex='-1'" : ""%> class="page-link" href="cateList.do?page=<%=nowPage+1 %>&&category=<%=category%>">&gt;</a>
+	    	</li>	
+	 	</ul>
+	</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" ></script>

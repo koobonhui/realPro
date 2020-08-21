@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import action.Action;
+import action.AdminDeleteAction;
 import action.BoardListAction;
 import action.BoardWriteProAction;
 import action.CateListAction;
@@ -19,8 +20,10 @@ import action.IdCheckAction;
 import action.JoinAction;
 import action.LoginAction;
 import action.MemberBanAction;
+import action.MemberListAction;
 import action.MemberPermitAction;
 import action.MemberSearchAction;
+import action.MemberViewAction;
 import action.RecCountAction;
 import action.ReplyAction;
 import action.ReplyDeleteAction;
@@ -240,6 +243,30 @@ public class Controller extends javax.servlet.http.HttpServlet
 			}
 		} else if(command.equals("/memberPermit.do")) {		// Ban 풀어주기
 			action = new MemberPermitAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else if(command.equals("/memberlist.do")) {		// 회원 리스트 보기
+			action = new MemberListAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else if(command.equals("/memberViewAction.do")) {		// 회원 상세 보기
+			action = new MemberViewAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else if(command.equals("/admindelete.do")) {		// 관리자 유저 삭제
+			action = new AdminDeleteAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
