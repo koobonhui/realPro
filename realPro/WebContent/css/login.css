@@ -15,6 +15,11 @@ body {
     cursor: pointer;
 }
 
+#logo > img {
+	width: 208px;
+	height: 110px;
+}
+
 #header {
     padding-top: 25px;
     padding-bottom: 20px;

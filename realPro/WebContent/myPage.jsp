@@ -34,7 +34,7 @@
 			<div class="col-2" id="login">
 				<h6> <a href="selectMember.do?id=<%=id %>"><%=id%></a>님 환영합니다.</h6>
 				<b><a href="logout.do"> 로그아웃</a></b>
-				<b><%if(id.equals("admin")) { %><a style="float:right;" href="./memberSearchForm.do" onclick="window.open(this.href, '_blank', 'width=500px,height=300px,toolbars=no,scrollbars=no'); return false;">멤버 관리</a></b><%} %>
+				<b><%if(id.equals("admin")) { %><a style="float:right;" href="memberlist.do">멤버 관리</a></b><%} %>
 			</div>
 	</header>
 	<div class="clearfix"></div>
