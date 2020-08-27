@@ -189,8 +189,11 @@
 		</form>
 		<% if(id == null){ %>
 			<div class="col-2" id="login">
-				<b><a href="loginForm.do"> 로그인</a> / 
-				<a href="joinForm.do"> 회원가입</a></b>
+				<div class="btn-container">
+  					<a href="loginForm.do" class="btn">Sign Up!</a>
+				</div>
+  				<input class="button" type="button" onclick="location.href='loginForm.do'" value = "로그인">
+<!-- 				<b><a href="loginForm.do"> 로그인</a></b> -->
 			</div>
 		<% } else { %>
 			<div class="col-2" id="login">
@@ -923,6 +926,6 @@
 			self.name = 'reload';
 			self.location.reload(true);
 		} else self.name = '';
-	</script>
+	</script>	
 </body>
 </html>

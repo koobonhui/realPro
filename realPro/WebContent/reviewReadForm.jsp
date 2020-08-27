@@ -37,7 +37,7 @@
 <meta charset="UTF-8">
 <title>Review Me : 글 읽기</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/readform.css">
 </head>
 <body>
 	<header class="container mt-5">
@@ -49,8 +49,7 @@
 		</form>
 		<% if(id == null){ %>
 			<div class="col-2" id="login">
-				<b><a href="loginForm.do"> 로그인</a> / 
-				<a href="joinForm.do"> 회원가입</a></b>
+				<b><a href="loginForm.do"> 로그인</a></b>
 			</div>
 		<% } else { %>
 			<div class="col-2" id="login">
@@ -108,7 +107,19 @@
 		</div>
 		<textarea class="col-7" style=" margin-left: 42px; float:left; border:1px solid black; height: 420px; overflow:scroll;" readonly><%=review.getContent().get(0) %></textarea>
 		<div style="clear:both;"></div>
-		<div class="mt-5" style="width: 200px; margin: 0 auto;"><button id="recommendBtn">추천하기</button> <span id="recCount">추천수: <%if(request.getAttribute("recCount") == null) {%><%=review.getRecommend().get(0)%><%}else{%> <%=recCount %><%} %></span></div>
+		<div class="mt-5" style="width: 200px; margin: 0 auto;">			
+<!-- 			<button type='button' id = "recommendBtn" style="margin-top: 40px;"> -->
+<!-- 	  			<i class='fa fa-thumbs-up'></i> -->
+<!-- 	  			Like -->
+<%-- 	  			<span id="recCount"><%if(request.getAttribute("recCount") == null) {%><%=review.getRecommend().get(0)%><%}else{%> <%=recCount %><%} %></span> --%>
+<!-- 			</button> -->
+			
+			<button type='button' id = "heart" style="margin-top: 50px;" value = "like">
+	  			<i class='fa fa-thumbs-up'>1</i>
+	  			<b style="z-index: 10;">Like</b>
+	  			<span id="recCount"><%if(request.getAttribute("recCount") == null) {%><%=review.getRecommend().get(0)%><%}else{%> <%=recCount %><%} %></span>
+			</button>
+		</div>
 		<div class="mt-5"style="width: 100%; border-bottom:2px solid black;">전체 리플 <span style="color:red"><%if(reply!=null){%><%=reply.getReply_content().size() %><%}else {%>0<%} %>개</span></div>
 		<div style="margin-top:15px;">
 		<% int j; %>
@@ -209,7 +220,7 @@
 	});
 	<%}%>
 	<%}%>
-	$("#recommendBtn").click(function(){
+	$("#heart").click(function(){
 		<%if(id!=null) {%>
 			<%if(recDuplicationCheck==0) { %>
 			$.ajax({
@@ -249,6 +260,25 @@
 	}
 });
 	
+</script>
+<script>
+	var animateButton = function(e) {
+
+		  e.preventDefault;
+		  //reset animation
+		  e.target.classList.remove('animate');
+		  
+		  e.target.classList.add('animate');
+		  setTimeout(function(){
+		    e.target.classList.remove('animate');
+		  },700);
+		};
+
+		var bubblyButtons = document.getElementsByClassName("bubbly-button");
+
+		for (var i = 0; i < bubblyButtons.length; i++) {
+		  bubblyButtons[i].addEventListener('click', animateButton, false);
+		}
 </script>
 </body>
 </html>

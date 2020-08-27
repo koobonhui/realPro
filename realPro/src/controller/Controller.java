@@ -16,6 +16,7 @@ import action.BoardWriteProAction;
 import action.CateListAction;
 import action.DeleteMemberAction;
 import action.DeleteReviewAction;
+import action.EmailSendAction;
 import action.IdCheckAction;
 import action.JoinAction;
 import action.LoginAction;
@@ -54,10 +55,13 @@ public class Controller extends javax.servlet.http.HttpServlet
 		Action action=null;
 		Action action1 = null;
 
-		if(command.equals("/loginForm.do")){		// 로그인 폼
+		if(command.equals("/loginForm.do")) {		// 로그인 폼
 			forward=new ActionForward();
 			forward.setPath("/loginForm.jsp");
-		} else if(command.equals("/login.do")) {	// 로그인 액션
+		} else if(command.equals("/find.do")) {		// 비번찾기 폼
+			forward=new ActionForward();
+			forward.setPath("/passFindForm.jsp");
+		}  else if(command.equals("/login.do")) {	// 로그인 액션
 			action = new LoginAction();
 			try {
 				forward = action.execute(request, response);
@@ -267,6 +271,14 @@ public class Controller extends javax.servlet.http.HttpServlet
 			}
 		} else if(command.equals("/admindelete.do")) {		// 관리자 유저 삭제
 			action = new AdminDeleteAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else if(command.equals("/emailsend.do")) {		// 비밀번호 찾기
+			action = new EmailSendAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

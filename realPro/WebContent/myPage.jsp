@@ -21,7 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <link rel = "stylesheet" href = "css/main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-    <title>마이 페이지</title>
+    <title>Review Me : 마이 페이지</title>
   </head>
   <body>
   <header class="container mt-5">

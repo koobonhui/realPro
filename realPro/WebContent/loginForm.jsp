@@ -6,8 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Review Me : 로그인</title>
-    <link rel = "stylesheet" href = "css/login.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+<link rel = "stylesheet" href = "css/login.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 </head>
 <body>
 
@@ -50,6 +50,8 @@
         
         <div class = "join_area">
         	<span><a href = "joinForm.do">회원가입</a></span>
+        	<span>&nbsp;&nbsp;</span>
+        	<span><a href = "find.do">비밀번호 찾기</a></span>
         </div>
     </div> 
 </form>

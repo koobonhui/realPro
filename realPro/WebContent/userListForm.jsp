@@ -24,8 +24,7 @@
 	</form>
 	<% if(id == null){ %>
 		<div class="col-2" id="login">
-			<b><a href="loginForm.do"> 로그인</a> / 
-			<a href="joinForm.do"> 회원가입</a></b>
+			<b><a href="loginForm.do">로그인</a></b>
 		</div>
 	<% } else { %>
 		<div class="col-2" id="login">

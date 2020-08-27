@@ -1,0 +1,251 @@
+
+* {
+	list-style: none;
+}
+
+#logo {
+	float: left;
+}
+#logo > img {
+	width: 208px;
+	height: 110px;
+}
+#board {
+	width: 120px;
+	float: left;
+}
+
+#search {
+	float: left;
+}
+
+#login {
+	float: right;
+}
+
+#clearfix {
+	clear: both;
+	content: "";
+	display: block;
+}
+#copyright {
+	width:100%;
+	background: black;
+	height: 50px;
+	text-align: center;
+	color: white;
+	line-height: 50px;
+	margin-top: 100px;
+	bottom: 0;
+}
+
+h5 {
+	text-align: center;
+}
+#popup {
+	width: 300px;
+	height: 500px;
+	background: white;
+	box-shadow: 0 0 5px 5px lightgray;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 10000;
+}
+
+div#popup > div#pHead {
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 80px;
+	text-align: center;
+}
+
+div#popup > div#pBody {
+	padding: 5px;
+	box-sizing: border-box;
+	height: 380px;
+	text-align: center;
+}
+
+div#popup > div#pFoot {
+	height: 40px;
+}
+
+div#popup > div#pFoot > button {
+	float: right;
+	margin-right: 10px;	
+}
+
+.card {
+	cursor:pointer;
+}
+
+
+.card-text {
+	height: 100px;
+	overflow:hidden;
+}
+
+.card-deck .card-img-top {
+	height: 208px;
+}
+
+.card-group .card-img-top {
+	height: 208px;
+}
+
+#myTabContent1 {
+	z-index: 999;
+}
+
+.card-body {
+	padding: 15px;
+}
+
+#totalCate .card-img-top {
+	height: 80px;
+	margin: 0;
+	padding: 0;
+}
+
+th {
+	background: #ccc;
+}
+
+.d-block {
+	width: 400px;
+	height: 400px;
+}
+
+/* ================================== */
+#heart {
+      position: relative;
+      width: 100px;
+      height: 90px;
+      outline: none;
+      border: 0;
+      background: #FFF;
+      -webkit-transition: all .2s ease-in-out;
+  	  transition: all .2s ease-in-out;
+}
+#heart:before, #heart:after {
+      position: absolute;
+      content: "";
+      left: 50px;
+      top: 0;
+      width: 50px;
+      height: 80px;
+      background: pink;
+      border-radius: 50px 50px 0 0;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+#heart:after {
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+}
+#heart:hover {
+  color: #84d9ff;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+#heart:hover span {
+  opacity: 1;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+#heart:active {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+}
+#heart span {
+  position: absolute;
+  top: -55px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: #84d9ff;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 10px 0;
+  border-radius: 100px;
+  opacity: 0;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+#heart span:hover {
+  opacity: 1;
+}
+#heart span:after {
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #84d9ff;
+}
+/* ============================= */
+#recommendBtn {
+  width: 90px;
+  height: 40px;
+  background: #FF0033;
+  border: 0;
+  font-size: .9rem;
+  font-family: Futura;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+#recommendBtn:hover {
+  color: #84d9ff;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+#recommendBtn:hover span {
+  opacity: 1;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+#recommendBtn:active {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+}
+#recommendBtn span {
+  position: absolute;
+  top: -55px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: #84d9ff;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 10px 0;
+  border-radius: 100px;
+  opacity: 0;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+#recommendBtn span:hover {
+  opacity: 1;
+}
+#recommendBtn span:after {
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #84d9ff;
+}
