@@ -15,7 +15,7 @@
 
 <!-- wrapper -->
 <div id = "wrapper">
-<form action="login.do" method = "POST">
+<form action="passupdate.do" method = "POST">
     <!-- content-->
     <div id = "content">
         <!-- ID -->
@@ -44,7 +44,7 @@
         
         <!-- BTN-->
         <div class = "btn_area">
-            <button type = "button" id="btnJoin" onclick="return checkCer();">
+            <button type = "submit" id="btnJoin" onclick="return gogo();">
                 <span>확인</span>
             </button>            
         </div>
@@ -68,8 +68,10 @@ var re = "";
 var hiddenbox = document.querySelector('.hiddenbox');
 var cernumber = document.querySelector('#CerNumber');
 var error = document.querySelectorAll('.error_next_box');
+
 var check_id = false;
 var check_pass = false;
+var all_check = false;
 
 id.addEventListener("blur", checkId);
 cernumber.addEventListener("blur", checkpass);
@@ -139,27 +141,44 @@ function check_join() {
 			    }
 			}
 		});
-// 		location.href = "emailsend.do?id="+id.value;
 		return true;
 	}
 }
 
 function checkpass() {
-	if(cernumber.value === re) {
-        error[1].innerHTML = "맞음";
+	if(cernumber.value === "") {
+		error[1].innerHTML = "인증번호를 입력해주세요.";
+        error[1].style.color = "red";
+        error[1].style.display = "block";
+        check_pass = false;
+        return false;
+    } else if(cernumber.value === re) {
+    	error[1].innerHTML = "맞음";
         error[1].style.color = "green";
         error[1].style.display = "block";
     	console.log('re벨류 : ' + re);
     	console.log('인풋벨류 : ' + cernumber.value);
+    	check_pass = true;
     	return true;
-    } else {
+    } else {   
     	error[1].innerHTML = "틀림";
     	error[1].style.color = "red";
         error[1].style.display = "block";
         console.log('re벨류 : ' + re);
     	console.log('인풋벨류 : ' + cernumber.value);
+    	check_pass = false;
     	return false;  	
     }
+}
+
+function gogo() {
+	all_check = check_id && check_pass;
+	if(all_check === false) {
+		alert('이메일 및 인증번호를 확인해 주세요.');
+		return false;
+	} else {
+		return true;
+	}
 }
 </script>
 </html>

@@ -322,4 +322,25 @@ public class MemberDAO {
 		
 		return deleteCount;
 	}
+	
+	public int updatePass(Member member) {
+		System.out.println("비밀번호수정 DAO 입장");
+		String sql="UPDATE users SET pass=HEX(AES_ENCRYPT(?,SHA2('Repass', 256))), passT=HEX(AES_ENCRYPT(?,SHA2('Repass', 256))) WHERE id=?";
+		int result=0;
+		
+		try{
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, member.getPass());
+			pstmt.setString(2, member.getPassT());
+			pstmt.setString(3, member.getId());
+			result =pstmt.executeUpdate();
+			return result;
+		}catch(Exception ex){
+			System.out.println("updatePass 에러: " + ex);			
+		}finally{
+			close(pstmt);
+		}
+		
+		return result;
+	}
 }

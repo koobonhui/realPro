@@ -105,7 +105,7 @@
 			  </a>
 			</div>
 		</div>
-		<textarea class="col-7" style=" margin-left: 42px; float:left; border:1px solid black; height: 420px; overflow:scroll;" readonly><%=review.getContent().get(0) %></textarea>
+		<textarea class="col-7" style=" margin-left: 42px; float:left; border:1px solid black; height: 420px; resize: none;" readonly><%=review.getContent().get(0) %></textarea>
 		<div style="clear:both;"></div>
 		<div class="mt-5" style="width: 200px; margin: 0 auto;">			
 <!-- 			<button type='button' id = "recommendBtn" style="margin-top: 40px;"> -->
@@ -115,9 +115,9 @@
 <!-- 			</button> -->
 			
 			<button type='button' id = "heart" style="margin-top: 50px;" value = "like">
-	  			<i class='fa fa-thumbs-up'>1</i>
-	  			<b style="z-index: 10;">Like</b>
+	  			<i class='fa fa-thumbs-up'></i>
 	  			<span id="recCount"><%if(request.getAttribute("recCount") == null) {%><%=review.getRecommend().get(0)%><%}else{%> <%=recCount %><%} %></span>
+	  			<div style = "position: absolute; top: 15%; left: 37%; z-index: 1000;">Like<br><%if(request.getAttribute("recCount") == null) {%><%=review.getRecommend().get(0)%><%}else{%> <%=recCount %><%} %></div>
 			</button>
 		</div>
 		<div class="mt-5"style="width: 100%; border-bottom:2px solid black;">전체 리플 <span style="color:red"><%if(reply!=null){%><%=reply.getReply_content().size() %><%}else {%>0<%} %>개</span></div>
@@ -156,7 +156,7 @@
 		<div class="mt-5" style="border-top:2px solid black; border-bottom:2px solid black;">
 		
 			<form id="replyForm" class="mt-5" method="post" action="replyWrite.do?board_num=<%=num%>">
-		 		<textarea id="replyText" maxlength="500" <%if(id==null) { %> <%="disabled"%> <%} %> name="reply_content" style="width:90%; float:left; height:100px;"
+		 		<textarea id="replyText" maxlength="500" <%if(id==null) { %> <%="disabled"%> <%} %> name="reply_content" style="width:90%; float:left; height:100px; resize: none;"
 		 		required placeholder=<% if(id==null) { %> "로그인 후 댓글 등록이 가능합니다." <%}else { %> "타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙 및 관련 법률에 제재를 받을 수 있습니다.&#13;&#10;Shift+Enter 키를 동시에 누르면 줄바꿈이 됩니다."<%} %>></textarea>
 				<input <%if(id==null) { %> <%="disabled"%> <%} %> style="width:10%; float:left;" type="submit" value="등록"/>
 		 	</form>

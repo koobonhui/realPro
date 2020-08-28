@@ -147,7 +147,7 @@ th {
       transform-origin: 100% 100%;
 }
 #heart:hover {
-  color: #84d9ff;
+  color: #fff;
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }

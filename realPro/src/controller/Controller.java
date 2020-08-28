@@ -25,6 +25,7 @@ import action.MemberListAction;
 import action.MemberPermitAction;
 import action.MemberSearchAction;
 import action.MemberViewAction;
+import action.PassUpdateAction;
 import action.RecCountAction;
 import action.ReplyAction;
 import action.ReplyDeleteAction;
@@ -35,6 +36,7 @@ import action.ReviewsAction;
 import action.SelectMemberAction;
 import action.TotalSearchAction;
 import action.UpdateMemberAction;
+import action.UpdatePassAction;
 import action.UpdateReviewAction;
 import action.UpdateUserAction;
 import vo.ActionForward;
@@ -54,14 +56,14 @@ public class Controller extends javax.servlet.http.HttpServlet
 		ActionForward forward=null;
 		Action action=null;
 		Action action1 = null;
-
+		
 		if(command.equals("/loginForm.do")) {		// 로그인 폼
 			forward=new ActionForward();
 			forward.setPath("/loginForm.jsp");
 		} else if(command.equals("/find.do")) {		// 비번찾기 폼
 			forward=new ActionForward();
 			forward.setPath("/passFindForm.jsp");
-		}  else if(command.equals("/login.do")) {	// 로그인 액션
+		} else if(command.equals("/login.do")) {	// 로그인 액션
 			action = new LoginAction();
 			try {
 				forward = action.execute(request, response);
@@ -85,6 +87,20 @@ public class Controller extends javax.servlet.http.HttpServlet
 			}
 		} else if(command.equals("/index.do")) {	// 메인화면으로 (게시글 넘겨주면서)
 			action = new ReviewsAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if(command.equals("/passupdate.do")) {	// 새 비밀번호
+			action = new PassUpdateAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if(command.equals("/updatepass.do")) {	// 새 비밀번호 수정
+			action = new UpdatePassAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
