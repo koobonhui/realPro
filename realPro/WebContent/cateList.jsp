@@ -25,19 +25,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="css/main.css">
-	<title>Title</title>
+	<title>Review Me : <%=category %>게시판</title>
 </head>
 <body>
 	<header class="container mt-5">
 		<div class="col-2" id="logo" onclick="location.href='index.do'" style="cursor: pointer;"><img src="imgs/logo3.png" alt="Logo"/></div>
-		<div class="col-2 ml-5" id="board"><button onclick="location.href='boardList.do'">전체 리뷰</button></div>
+<!-- 		<div class="col-2 ml-5" id="board"><button onclick="location.href='boardList.do'">전체 리뷰</button></div> -->
 		<form id="searchForm" method="post" action="totalSearch.do">
-			<input name="keyword" id="search" class="col-5" type="text"
-				placeholder="제품명 혹은 모델번호로 검색하세요." required />
+			<input style= "margin-left: 13%; margin-top: 3%;" name="keyword" id="search" class="col-5" type="text"
+				placeholder="제목 / 작성자로 검색하세요." required />
 		</form>
 		<% if(id == null){ %>
-			<div class="col-2" id="login">
-				<b><a href="loginForm.do"> 로그인</a></b>
+			<div class="col-2" style= "margin-top: 2%;" id="login">
+				<b><a href="loginForm.do" class="btn btn-primary btn-lg"> 로그인</a></b>
 			</div>
 		<% } else { %>
 			<div class="col-2" id="login">
@@ -49,10 +49,11 @@
 	</header>
 	<div class="clearfix"></div>
 	<hr/>
-	<div class="container"><h5>리뷰 게시물 검색결과</h5></div>
+	<div class="container"><h5><%=category %> 게시물 검색결과</h5></div>
 	<section class = "container" id="listForm">
-		<p><%=category %> 리뷰<small>(<%=listCount %>개)</small></p>
-		<div class="card-group">
+		<p style="float: left; margin-top: 1%;"><%=category %> 리뷰<small>(<%=listCount %>개)</small></p>
+		<div class="col-3 ml-5" style="float:right; margin-bottom: 1%;" id="board"><button type="button" class="btn btn-info" onclick="location.href='reviewWriteForm.do'">리뷰 작성</button></div>
+		<div class="card-group" style="clear: both;">
 		
 			<%
 			if(articleList != null ){

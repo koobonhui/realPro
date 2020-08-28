@@ -26,10 +26,10 @@
   <body>
   <header class="container mt-5">
 		<div class="col-2" id="logo" onclick="location.href='index.do'" style="cursor: pointer;"><img src="imgs/logo3.png" alt="Logo"/></div>
-		<div class="col-2 ml-5" id = "board"><button onclick="location.href='boardList.do'">전체 리뷰</button></div>
+<!-- 		<div class="col-2 ml-5" id = "board"><button onclick="location.href='boardList.do'">전체 리뷰</button></div> -->
 		<form id="searchForm" method="post" action="totalSearch.do">
-			<input name="keyword" id="search" class="col-5" type="text"
-				placeholder="제품명 혹은 모델번호로 검색하세요." required />
+			<input name="keyword" style= "margin-left: 13%; margin-top: 3%;" id="search" class="col-5" type="text"
+				placeholder="제목 / 작성자로 검색하세요." required />
 		</form>
 			<div class="col-2" id="login">
 				<h6> <a href="selectMember.do?id=<%=id %>"><%=id%></a>님 환영합니다.</h6>
@@ -141,8 +141,8 @@
 				</tbody>
 				</table>
 		</div>
-		<input type = "button" value ="정보 수정" onclick = "location.href='updateMember.do?id=<%=id %>'">
-		<input type = "button" value ="회원 탈퇴" id = "deleteMember">
+		<input type = "button" class="btn btn-outline-warning" value ="정보 수정" onclick = "location.href='updateMember.do?id=<%=id %>'">
+		<input type = "button" class="btn btn-outline-danger" value ="회원 탈퇴" id = "deleteMember">
 	</div>
 	</form>
   </section>

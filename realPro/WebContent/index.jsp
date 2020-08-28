@@ -159,8 +159,25 @@
 <title>Review Me</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/main.css">
+<style>
+.carousel-indicators li {
+    display: inline-block;
+    width: 48px;
+    height: 10px;
+    margin: 10px;
+    cursor: pointer;
+    opacity: 0.2;
+    background-color: #999;
+}
+.carousel-indicators .active {
+    width: 48px;
+    height: 10px;
+    margin: 10px;
+    opacity: 0.2;
+    background-color: #000;
+}
+</style>
 </head>
-
 <body>	
 	<div id = "popup">
 		<div id = "pHead">
@@ -184,16 +201,13 @@
 		<div class="col-2" id="logo" onclick="location.href='index.do'" style="cursor: pointer;"><img src="imgs/logo3.png" alt="Logo"/></div>
 <!-- 		<div class="col-2 ml-5" id="board"><button onclick="location.href='boardList.do'">전체 리뷰</button></div> -->
 		<form id="searchForm" method="post" action="totalSearch.do">
-			<input style= "margin-left: 15%;"name="keyword" id="search" class="col-5" type="text"
-				placeholder="제품명 혹은 모델번호로 검색하세요." required />
+			<input style= "margin-left: 13%; margin-top: 3%;"name="keyword" id="search" class="col-5" type="text"
+				placeholder="제목 / 작성자로 검색하세요." required />
 		</form>
 		<% if(id == null){ %>
-			<div class="col-2" id="login">
-				<div class="btn-container">
-  					<a href="loginForm.do" class="btn">Sign Up!</a>
-				</div>
-  				<input class="button" type="button" onclick="location.href='loginForm.do'" value = "로그인">
-<!-- 				<b><a href="loginForm.do"> 로그인</a></b> -->
+			<div class="col-2" style="margin-top: 2%;" id="login">
+<!--   				<input class="button" type="button" onclick="location.href='loginForm.do'" value = "로그인"> -->
+			<b><a href="loginForm.do" class="btn btn-primary btn-lg"> 로그인</a></b>
 			</div>
 		<% } else { %>
 			<div class="col-2" id="login">
@@ -205,30 +219,63 @@
 	</header>
 	<div class="clearfix"></div>
 	<hr/>
-	<section class="container" style="height: 300px; overflow: hidden;">
-		<div id="carouselExampleControls" class="carousel slide"
-			data-ride="carousel">
-			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<img src="imgs/banner_01.jpg" class="d-block w-100" alt="a">
-				</div>
-				<div class="carousel-item">
-					<img src="imgs/banner_02.jpg" class="d-block w-100" alt="b">
-				</div>
-				<div class="carousel-item">
-					<img src="imgs/banner_03.jpg" class="d-block w-100" alt="c">
-				</div>
-			</div>
-			<a class="carousel-control-prev" href="#carouselExampleControls"
-				role="button" data-slide="prev"> <span
-				class="carousel-control-prev-icon" aria-hidden="true"></span> <span
-				class="sr-only">Previous</span>
-			</a> <a class="carousel-control-next" href="#carouselExampleControls"
-				role="button" data-slide="next"> <span
-				class="carousel-control-next-icon" aria-hidden="true"></span> <span
-				class="sr-only">Next</span>
-			</a>
-		</div>
+	<section class="container" style="height: 400px; overflow: hidden;">
+	<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="imgs/banner.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="imgs/banner1.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">       
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="imgs/banner2.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<!-- 	====================================================== -->
+<!-- 		<div id="carouselExampleControls" class="carousel slide" -->
+<!-- 			data-ride="carousel"> -->
+<!-- 			<div class="carousel-inner"> -->
+<!-- 				<div class="carousel-item active"> -->
+<!-- 					<img src="imgs/banner_01.jpg" class="d-block w-100" alt="a"> -->
+<!-- 				</div> -->
+<!-- 				<div class="carousel-item"> -->
+<!-- 					<img src="imgs/banner_02.jpg" class="d-block w-100" alt="b"> -->
+<!-- 				</div> -->
+<!-- 				<div class="carousel-item"> -->
+<!-- 					<img src="imgs/banner_03.jpg" class="d-block w-100" alt="c"> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 			<a class="carousel-control-prev" href="#carouselExampleControls" -->
+<!-- 				role="button" data-slide="prev"> <span -->
+<!-- 				class="carousel-control-prev-icon" aria-hidden="true" style="position: absolute; top: 37%; left: 17%;"></span> <span -->
+<!-- 				class="sr-only">Previous</span> -->
+<!-- 			</a> <a class="carousel-control-next" href="#carouselExampleControls" -->
+<!-- 				role="button" data-slide="next"> <span -->
+<!-- 				class="carousel-control-next-icon" aria-hidden="true" style="position: absolute; top: 37%; right: 17%;"></span> <span -->
+<!-- 				class="sr-only">Next</span> -->
+<!-- 			</a> -->
+<!-- 		</div> -->
 	</section>
 
 	<nav class="container mt-5">

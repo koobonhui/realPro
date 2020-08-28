@@ -39,7 +39,6 @@
                 <input type = "text" id = "CerNumber" class = "int" maxlength = "20" name = "CerNumber" placeholder="인증번호">
             </span>
             <span class = "error_next_box"></span>
-            <span class = "hiddenbox"></span>
         </div>
         
         <!-- BTN-->
@@ -54,7 +53,7 @@
         <div class = "join_area">
         	<span><a href = "joinForm.do">회원가입</a></span>
         	<span>&nbsp;&nbsp;</span>
-        	<span><a href = "joinForm.do">비밀번호 찾기</a></span>
+        	<span><a href = "find.do">비밀번호 찾기</a></span>
         </div>
     </div> 
 </form>
@@ -64,6 +63,8 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
 <script>
 var id = document.querySelector('#id');
+var btnJoin = document.querySelector('#btnJoin');
+var Cernum = document.querySelector('#Cernum');
 var re = "";
 var hiddenbox = document.querySelector('.hiddenbox');
 var cernumber = document.querySelector('#CerNumber');
@@ -74,7 +75,11 @@ var check_pass = false;
 var all_check = false;
 
 id.addEventListener("blur", checkId);
+Cernum.addEventListener("mouseover", checkId);
+btnJoin.addEventListener("mouseover", checkpass);
+cernumber.addEventListener("focus", checkpass);
 cernumber.addEventListener("blur", checkpass);
+cernumber.addEventListener("paste", checkpass);
 
 function checkId() {
 	if(id.value === "") {
@@ -87,6 +92,9 @@ function checkId() {
     	overlap();
     }
 }
+// $('#Cernum').click(function(
+// 		id.addEventListener("click", checkId);
+// 		){});
 
 function overlap() {
 	$.ajax({
@@ -126,16 +134,11 @@ function check_join() {
 			url : "emailsend.do?id="+id.value,
 			error : function(data) {
 				alert('통신실패!! 관리자에게 문의해주세요.');
-				alert(data);
 			},
 			success : function(data) {
 				alert('발송완료 인증번호 확인.');
-				console.log(data.trim());
 				if(data.trim() != null) {
 					re = data.trim();
-					console.log('re값 : ' + re);
-					hiddenbox.innerHTML = data.trim();
-					hiddenbox.style.display = "block";
 			    } else {
 			    	alert('관리자에게 문의');
 			    }
@@ -156,16 +159,12 @@ function checkpass() {
     	error[1].innerHTML = "맞음";
         error[1].style.color = "green";
         error[1].style.display = "block";
-    	console.log('re벨류 : ' + re);
-    	console.log('인풋벨류 : ' + cernumber.value);
     	check_pass = true;
     	return true;
     } else {   
     	error[1].innerHTML = "틀림";
     	error[1].style.color = "red";
         error[1].style.display = "block";
-        console.log('re벨류 : ' + re);
-    	console.log('인풋벨류 : ' + cernumber.value);
     	check_pass = false;
     	return false;  	
     }

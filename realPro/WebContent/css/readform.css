@@ -191,61 +191,10 @@ th {
   border-top: 8px solid #84d9ff;
 }
 /* ============================= */
-#recommendBtn {
-  width: 90px;
-  height: 40px;
-  background: #FF0033;
-  border: 0;
-  font-size: .9rem;
-  font-family: Futura;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-  cursor: pointer;
-  border-radius: 6px;
-  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
-  outline: none;
+.carousel-control-next-icon {
+       background-image : url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%343A40' viewBox='0 0 8 8'%3E%3Cpath d='M1.5 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 }
-#recommendBtn:hover {
-  color: #84d9ff;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-#recommendBtn:hover span {
-  opacity: 1;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
-#recommendBtn:active {
-  -webkit-transform: scale(1.4);
-          transform: scale(1.4);
-}
-#recommendBtn span {
-  position: absolute;
-  top: -55px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  background: #84d9ff;
-  color: rgba(0, 0, 0, 0.5);
-  padding: 10px 0;
-  border-radius: 100px;
-  opacity: 0;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
-#recommendBtn span:hover {
-  opacity: 1;
-}
-#recommendBtn span:after {
-  position: absolute;
-  bottom: -7px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  content: "";
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-top: 8px solid #84d9ff;
+
+.carousel-control-prev-icon {
+       background-image : url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%343A40' viewBox='0 0 8 8'%3E%3Cpath d='M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
 }

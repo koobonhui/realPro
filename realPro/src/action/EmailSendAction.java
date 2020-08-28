@@ -81,6 +81,7 @@ public class EmailSendAction implements Action {
 			message.setContent(content, "text/html;charset=UTF-8");
 			message.setSentDate(new java.util.Date());
 			Transport.send(message);
+			
 			request.setAttribute("pass", temp);
 			forward.setPath("passFind.jsp");
 		} catch(Exception e) {

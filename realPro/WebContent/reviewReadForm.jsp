@@ -42,14 +42,14 @@
 <body>
 	<header class="container mt-5">
 		<div class="col-2" id="logo" onclick="location.href='index.do'" style="cursor: pointer;"><img src="imgs/logo3.png" alt="Logo"/></div>
-		<div class="col-2 ml-5" id="board"><button onclick="location.href='boardList.do'">전체 리뷰</button></div>
+<!-- 		<div class="col-2 ml-5" id="board"><button onclick="location.href='boardList.do'">전체 리뷰</button></div> -->
 		<form id="searchForm" method="post" action="totalSearch.do">
-			<input name="keyword" id="search" class="col-5" type="text"
-				placeholder="제품명 혹은 모델번호로 검색하세요." required />
+			<input name="keyword" style= "margin-left: 13%; margin-top: 3%;" id="search" class="col-5" type="text"
+				placeholder="제목 / 작성자로 검색하세요." required />
 		</form>
 		<% if(id == null){ %>
-			<div class="col-2" id="login">
-				<b><a href="loginForm.do"> 로그인</a></b>
+			<div class="col-2" style= "margin-top: 2%;" id="login">
+				<b><a href="loginForm.do" class="btn btn-primary btn-lg"> 로그인</a></b>
 			</div>
 		<% } else { %>
 			<div class="col-2" id="login">
@@ -73,8 +73,8 @@
 				<h5 style="display:inline;">댓글: <%if(reply!=null) { %><%=reply.getReply_content().size() %><%} else { %><%=0%><%} %></h5>			
 		</div>
 			<h5 class="ml-3" style="float:left;">작성자: <%=review.getUser().get(0) %></h5>
-			<button id="deleteReview" class="mr-3 mb-3" style="float:right;">삭제</button>
-			<button id="updateReview" class="mr-3 mb-3" style="float:right;">수정</button>
+			<button id="deleteReview" class="mr-3 mb-3 btn btn-outline-danger" style="float:right;">삭제</button>
+			<button id="updateReview" class="mr-3 mb-3 btn btn-outline-warning" style="float:right;">수정</button>
 		<div id="clearfix"></div>
 		
 		<div class="col-5" style="padding: 10px; float:left; border:1px solid black; width:420px; height:420px; ">
@@ -116,7 +116,7 @@
 			
 			<button type='button' id = "heart" style="margin-top: 50px;" value = "like">
 	  			<i class='fa fa-thumbs-up'></i>
-	  			<span id="recCount"><%if(request.getAttribute("recCount") == null) {%><%=review.getRecommend().get(0)%><%}else{%> <%=recCount %><%} %></span>
+	  			<span>Like Me?</span>
 	  			<div style = "position: absolute; top: 15%; left: 37%; z-index: 1000;">Like<br><%if(request.getAttribute("recCount") == null) {%><%=review.getRecommend().get(0)%><%}else{%> <%=recCount %><%} %></div>
 			</button>
 		</div>
@@ -132,7 +132,7 @@
 			<div style="float:left;" class="col-2"><%=reply.getReply_date().get(i) %></div>
 			<%if(id != null) { %>
 			<% if(id.equals(reply.getReply_user().get(i)) || id.equals("admin")) { %>
-				<div id="replyDelete" style="float:right; border:1px solid black; cursor:pointer;" class="btn-primary" onclick="location='./replyDelete.do?reply_num=<%=reply.getBoard_num().get(i)%>&&board_num=<%=num%>'">x</div>
+				<div id="replyDelete" style="float:right; cursor:pointer;" class="btn btn-outline-danger" onclick="location='./replyDelete.do?reply_num=<%=reply.getBoard_num().get(i)%>&&board_num=<%=num%>'">삭제</div>
 			<%} %>
 			<%} %>
 			<div style="clear:both;">
@@ -158,7 +158,7 @@
 			<form id="replyForm" class="mt-5" method="post" action="replyWrite.do?board_num=<%=num%>">
 		 		<textarea id="replyText" maxlength="500" <%if(id==null) { %> <%="disabled"%> <%} %> name="reply_content" style="width:90%; float:left; height:100px; resize: none;"
 		 		required placeholder=<% if(id==null) { %> "로그인 후 댓글 등록이 가능합니다." <%}else { %> "타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙 및 관련 법률에 제재를 받을 수 있습니다.&#13;&#10;Shift+Enter 키를 동시에 누르면 줄바꿈이 됩니다."<%} %>></textarea>
-				<input <%if(id==null) { %> <%="disabled"%> <%} %> style="width:10%; float:left;" type="submit" value="등록"/>
+				<input <%if(id==null) { %> <%="disabled"%> <%} %> style="width:10%; float:left; height: 100px;" type="submit" class="btn btn-outline-secondary" value="등록"/>
 		 	</form>
 		</div>
 	</section>
